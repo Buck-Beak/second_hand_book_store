@@ -11,6 +11,14 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage:{
+        bannerImg: "url('/images/harry-potter-aesthetic.jpg')",
+        blackOverlay: "linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%)",
+        signupImg: "url('/images/parchment-paper-signup.png')",
+      },
+      fontFamily: {
+        custom: ['CustomFont', 'sans-serif'], 
+      },
     },
   },
   plugins: [],
