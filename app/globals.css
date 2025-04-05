@@ -21,8 +21,15 @@ body {
 }
 
 @font-face {
-  font-family: 'CustomFont';
+  font-family: 'CustomFont1';
   src: url('/fonts/BlissfulStone-Blissful-Demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CustomFont2';
+  src: url('/fonts/Literata-Italic-VariableFont_opsz,wght.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

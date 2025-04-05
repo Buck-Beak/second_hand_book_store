@@ -17,7 +17,8 @@ export default {
         signupImg: "url('/images/parchment-paper-signup.png')",
       },
       fontFamily: {
-        custom: ['CustomFont', 'sans-serif'], 
+        custom1: ['CustomFont1', 'sans-serif'],
+        custom2: ['CustomFont2', 'serif'],
       },
     },
   },
