@@ -9,9 +9,16 @@ import {
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
       console.log(res.user);
-      return res.user;  
+      return {
+        success: true,
+        message: "Login successful",
+        user: res.user
+      }; 
     } catch (error) {
-      return error;
+      return {
+        success: false,
+        message: error.message,
+      }
     }
   };
   
@@ -34,9 +41,16 @@ import {
         ...userData,
         uid: user.user.uid,
       });
-      return user.user;
+      return {
+        user: user.user,
+        success: true,
+        message: "User created successfully",
+      }
     } catch (error) {
-      return error;
+      return{
+        success: false,
+        message: error.message,
+      }
     }
   };
   
