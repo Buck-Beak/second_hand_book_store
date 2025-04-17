@@ -29,7 +29,7 @@ export default function Login() {
     return (
         <div className="flex justify-end w-full h-screen ">
         <div className="flex justify-center items-center bg-signupImg bg-contain bg-no-repeat w-[600px] h-[600px] bg-center h-screen">
-        <div className="flex flex-col justify-center items-center gap-2  w-[400px] h-[500px] font-custom1 text-2xl">
+        <div className="flex flex-col justify-center items-center gap-2  w-[400px] h-[500px] font-custom2 text-2xl">
             <h1 className="text-5xl font-bold">Login</h1>
            <div className="flex flex-col w-[300px] gap-2">
                 <label>Email</label>

@@ -13,15 +13,17 @@ export default function AllBooks() {
             const allBooks = await readAllData("books");
             const notUserBooks = allBooks.filter((book) => book.user!==user?.uid);
             setBooks(notUserBooks);
+           
             console.log("Not User Books",books);
         }
         fetchBooks();
     }, [user?.uid])
   return (
-    <div>
+    <div className='flex flex-col justify-start items-center font-custom2 w-full h-screen gap-5'>
+        <h1 className='text-3xl font-bold font-custom2 mt-10'>All Books</h1>
         {books.map((book,index)=>(
             <Link  key = {index} href={`/book-details/${book.id}`}>
-                <div className='flex flex-col justify-center items-center bg-yellow-300 p-2 rounded-md font-custom2 w-[400px] h-[200px] m-2 ml-[100px]'>
+                <div className='flex flex-col justify-center items-center bg-yellow-800/50 p-2 rounded-md font-custom2 w-[400px] h-[200px] m-2 ml-[100px]'>
                     <p>User: {book.username}</p>
                     <h1>Book Name: {book.bookName}</h1>
                     <h2>Author: {book.author}</h2>

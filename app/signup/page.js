@@ -11,6 +11,8 @@ export default function Signup({setLogin}) {
 
     const userData = {
         username,
+        email,
+        password,
     }
     const handleSignup = async(e) => {
         e.preventDefault();
@@ -31,10 +33,10 @@ export default function Signup({setLogin}) {
     return (
         <div className="flex justify-end w-full h-screen ">
         <div className="flex justify-center items-center bg-signupImg bg-contain bg-no-repeat w-[600px] h-[600px] bg-center h-screen">
-        <div className="flex flex-col justify-center items-center gap-2  w-[400px] h-[500px] font-custom1 text-2xl">
+        <div className="flex flex-col justify-center items-center gap-2  w-[400px] h-[500px] font-custom2 text-2xl">
             <h1 className="text-5xl font-bold">Signup</h1>
             <div className="flex flex-col w-[300px] gap-2">
-                <label className="font-custom1">Username</label>
+                <label className="font-custom2">Username</label>
                 <input type="text" className="rounded-md outline-none bg-yellow-800/30 px-2"
                        onChange={(e) => {setUsername(e.target.value)}}
                 />

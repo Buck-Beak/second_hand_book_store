@@ -15,6 +15,7 @@ export default {
         bannerImg: "url('/images/harry-potter-aesthetic.jpg')",
         blackOverlay: "linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%)",
         signupImg: "url('/images/parchment-paper-signup.png')",
+        backgroundImg: "url('/images/parchment-background.png')",
       },
       fontFamily: {
         custom1: ['CustomFont1', 'sans-serif'],
