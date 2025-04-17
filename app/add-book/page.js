@@ -55,8 +55,9 @@ export default function AddBook() {
         }
     }
   return (
-    <div className='flex flex-col justify-center items-center font-custom2 text-4xl gap-2'>
-      <h1>Add new book</h1>
+    <div className='flex flex-col justify-center items-center font-custom2 text-3xl gap-5 '>
+      <h1 className='mt-10 text-4xl'>Post book</h1>
+      <div className='bg-yellow-300/50 p-5 rounded-md flex flex-col gap-5 w-[800px] '>
       <div className='flex flex-col gap-2'>
         <label htmlFor="book-name">Name of Book</label>
         <input type="text" className='outline-none bg-yellow-800/30 rounded-md px-2 py-2' onChange={(e)=>setBookName(e.target.value)}/>
@@ -76,6 +77,7 @@ export default function AddBook() {
       </div>
       <div className='flex flex-col w-[100px] h-[100px]'>
         <button className="bg-yellow-800/50 hover:bg-yellow-800 rounded-md" onClick={handlePost}>POST</button>
+      </div>
       </div>
     </div>
   )

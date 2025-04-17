@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <AuthContextProvider>
-          {showBackground?(<div className="bg-yellow-700/50 bg-cover bg-center bg-no-repeat w-full h-screen">
+          {showBackground?(<div className="bg-yellow-700/50 bg-cover bg-center bg-no-repeat w-full min-h-screen overflow-auto scrollbar-hidden">
             {showNavbar && <Navbar/>}
             {children}
             
