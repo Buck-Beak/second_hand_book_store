@@ -10,6 +10,7 @@ export default function AddBook() {
     const [author,setAuthor] = useState('');
     const [summary,setSummary] = useState('');
     const [price,setPrice] = useState('');
+    const [picture,setPicture] = useState('');
     const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY);
 
     const generateSummary=async()=>{
@@ -45,7 +46,7 @@ export default function AddBook() {
                 alert("Price cannot be kept greater than 400");
             }
             else{
-                const data = {bookName:bookName,author:author,summary:summary,price:price,user:user?.uid,username:user?.username}
+                const data = {bookName:bookName,author:author,summary:summary,picture: picture,price:price,user:user?.uid,username:user?.username}
                 await createData("books",data);
             }
             
@@ -54,6 +55,17 @@ export default function AddBook() {
             alert(error.message);
         }
     }
+    const handleImageUpload = (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setPicture(reader.result);  // Base64 string
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+    
   return (
     <div className='flex flex-col justify-center items-center font-custom2 text-3xl gap-5 '>
       <h1 className='mt-10 text-4xl'>Post book</h1>
@@ -70,6 +82,10 @@ export default function AddBook() {
         <label htmlFor="summary">Summary</label>
         <textarea type="text" value = {summary} className='outline-none bg-yellow-800/30 rounded-md px-2 py-2' onChange={(e)=>setSummary(e.target.value)} />
         <button className="bg-yellow-800/50 hover:bg-yellow-800 rounded-md text-xl" onClick={generateSummary}>Get summary from web</button>
+      </div>
+      <div className='flex flex-col gap-2'>
+        <label htmlFor="upload-pic">Upload Book Cover</label>
+        <input type="file" className='outline-none bg-yellow-800/30 rounded-md px-2 py-2' onChange={(e)=>handleImageUpload(e)}/>
       </div>
       <div className='flex flex-col gap-2'>
         <label htmlFor="book-price">Price of Book</label>
